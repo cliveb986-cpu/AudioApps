@@ -36,7 +36,7 @@ export default function Footer() {
             className="inline-flex items-center gap-2 text-sm text-ink-300 transition hover:text-ink-100"
           >
             <Github className="h-4 w-4" />
-            github.com/…/surround-workbench
+            github.com/…/surroundsound-workbench
           </a>
           <a
             href={`${GITHUB_REPO}/issues/new`}

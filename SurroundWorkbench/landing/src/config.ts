@@ -1,21 +1,19 @@
-// One-stop config for the landing page. Edit these three constants AFTER you
-// push the project to GitHub and cut your first Release.
+// One-stop config for the landing page.
+// Bump VERSION when you cut a new release tag (purely cosmetic — the download
+// URL already follows :latest so it auto-points at the newest published asset).
 
 // 1) Your public repo URL (no trailing slash).
-//    Used for "View on GitHub" / "Source" links.
-export const GITHUB_REPO = 'https://github.com/YOUR-USERNAME/surround-workbench'
+export const GITHUB_REPO =
+  'https://github.com/audio-tumblweed/surroundsound-workbench'
 
-// 2) The download URL for your zip.
-//    GitHub's "/releases/latest/download/<asset-name>" always points to the
-//    newest release that has this asset attached — no need to change it per
-//    release. Replace YOUR-USERNAME with your actual username.
+// 2) Download URL for the zipped app.
+//    "releases/latest/download/<asset-name>" always points to the newest release
+//    that has this asset attached, so you never need to change it per release.
 export const DOWNLOAD_URL =
-  'https://github.com/YOUR-USERNAME/surround-workbench/releases/latest/download/SurroundWorkbench-standalone.zip'
+  'https://github.com/audio-tumblweed/surroundsound-workbench/releases/latest/download/SurroundWorkbench-standalone.zip'
 
-// 3) Optional: the version string displayed in the hero badge.
-//    Bump this when you cut a new release tag (purely cosmetic — the download
-//    link above already follows :latest).
+// 3) Version string shown in the hero badge + footer.
 export const VERSION = 'v1.0.0'
 
-// 4) Optional: your name/handle for the footer line.
-export const AUTHOR = 'You'
+// 4) Name/handle for the footer line.
+export const AUTHOR = 'Audio Tumbleweed'
