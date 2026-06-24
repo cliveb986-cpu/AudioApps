@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: theme('fontFamily.sans');
+  background: #070809;
+  color: #dfe3e8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'ss01' on, 'cv11' on;
+}
+
+::selection {
+  background: rgba(52, 211, 153, 0.35);
+  color: #ecfdf5;
+}
+
+/* Subtle film-grain noise on the whole page. SVG inlined so we have no extra request. */
+.grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+/* Glow used behind the hero */
+.aura {
+  background:
+    radial-gradient(circle at 18% 24%, rgba(52, 211, 153, 0.18), transparent 45%),
+    radial-gradient(circle at 82% 8%,  rgba(14, 165, 165, 0.12), transparent 50%),
+    radial-gradient(circle at 60% 90%, rgba(94, 234, 212, 0.08), transparent 55%);
+}
+
+.hairline {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* A simple monospaced caret animation for the install code block */
+.caret::after {
+  content: '▍';
+  margin-left: 4px;
+  color: #34d399;
+  animation: blink 1.05s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 60%   { opacity: 1; }
+  61%, 100% { opacity: 0; }
+}
+
+/* Reveal-on-load stagger for the hero */
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: revealIn 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+.reveal-1 { animation-delay: 0.05s; }
+.reveal-2 { animation-delay: 0.18s; }
+.reveal-3 { animation-delay: 0.30s; }
+.reveal-4 { animation-delay: 0.45s; }
+.reveal-5 { animation-delay: 0.60s; }
+
+@keyframes revealIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom scrollbar */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: #1c2126; border-radius: 6px; }
+*::-webkit-scrollbar-thumb:hover { background: #383d44; }
+
+/* Tag chip style */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-family: theme('fontFamily.mono');
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  background: rgba(52, 211, 153, 0.07);
+  color: #6ee7b7;
+  border: 1px solid rgba(52, 211, 153, 0.18);
+  text-transform: uppercase;
+}

@@ -104,3 +104,27 @@ chmod +x launch-app.sh install-gnome-launcher.sh
   in their hicolor locations, `gtk-update-icon-cache` builds, `.desktop`
   references `Icon=surround-workbench`. Bash syntax check passes.
 - Zip rebuilt: **`/app/SurroundWorkbench-standalone.zip` (72 KB, 50 files)**.
+
+## Update — Public download landing page (this session)
+- Added a self-contained marketing/download site at **`landing/`**:
+  Vite + React + TypeScript + Tailwind v3. Distinct typography (Bricolage
+  Grotesque + JetBrains Mono), dark teal/emerald aesthetic with grain texture,
+  aura gradients, reveal-in animation. 8 section components, all <100 lines.
+  Sections: Nav, Hero (with framed product screenshot), TrustStrip,
+  Features (4 cards), Install (4 numbered code-block steps with copy buttons),
+  Gallery (4 product screenshots), ConfigPreview (live .pa example), Faq, Footer.
+- Single source of truth: **`landing/src/config.ts`** holds `GITHUB_REPO`,
+  `DOWNLOAD_URL`, `VERSION`, `AUTHOR`. User edits these once after creating
+  their GitHub Release.
+- Captured 5 production screenshots of the app into
+  `landing/public/screenshots/` (hero, routing, equalizer, commands, notes).
+- Added GitHub Actions workflow **`.github/workflows/deploy-landing.yml`**
+  that auto-builds `landing/` and publishes to GitHub Pages on push to `main`.
+- `landing/README.md` documents config edits, local dev, and three deployment
+  paths (Actions, manual gh-pages, third-party static host).
+- Main README updated with a pointer to `landing/`.
+- Bundle size: landing builds to **~190 KB gzip** total (HTML+CSS+JS+icon),
+  plus ~450 KB of screenshot JPEGs.
+- Cold-install verification: both `frontend/` and `landing/` build cleanly
+  from a fresh unzip; ESLint passes on both.
+- Zip rebuilt: **`/app/SurroundWorkbench-standalone.zip` — 454 KB, 88 files**.

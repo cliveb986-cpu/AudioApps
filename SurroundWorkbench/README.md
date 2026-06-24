@@ -173,3 +173,13 @@ The **Commands** tab also lists package install steps and validation commands
 
 Personal-use port. The original surround/PulseAudio config templates are based
 on community LADSPA mbeq examples.
+
+---
+
+## Want a public download page?
+
+A complete marketing/download landing site for this app lives in **`landing/`** —
+Vite + React + Tailwind, ready to publish on GitHub Pages (with the included
+GitHub Actions workflow at `.github/workflows/deploy-landing.yml`) or any static
+host. See **`landing/README.md`** for the three-line config edit and deploy
+instructions.
