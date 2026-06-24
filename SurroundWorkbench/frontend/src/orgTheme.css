@@ -1,0 +1,43 @@
+:root {
+  --background: 240 6% 9%;
+  --foreground: 0 0% 96%;
+  --card: 240 5% 13%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 5% 12%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 158 64% 52%;
+  --primary-foreground: 240 10% 5%;
+  --secondary: 240 4% 18%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 4% 17%;
+  --muted-foreground: 240 5% 65%;
+  --body-foreground: 240 5% 90%;
+  --accent: 158 64% 22%;
+  --accent-foreground: 158 70% 90%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --warning: 38 92% 50%;
+  --warning-foreground: 0 0% 10%;
+  --success: 158 64% 45%;
+  --success-foreground: 0 0% 98%;
+  --border: 240 4% 22%;
+  --input: 240 4% 22%;
+  --ring: 158 64% 52%;
+  --shadow-retool-sm: 0 1px 2px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.5);
+  --shadow-retool-md: 0 4px 10px rgba(0, 0, 0, 0.45), 0 2px 4px rgba(0, 0, 0, 0.5);
+  --shadow-retool-lg: 0 12px 32px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.55);
+  --radius: 0.75rem;
+  --radius-md: calc(0.75rem - 2px);
+  --radius-sm: calc(0.75rem - 4px);
+  --font-sans: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+  --font-mono: 'JetBrains Mono', SFMono-Regular, Consolas, monospace;
+}
+
+/* Use a more readable sans for body but keep mono accent for headings/labels */
+:root {
+  --font-sans: 'Inter Tight', 'DejaVu Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  border-color: hsl(var(--border));
+}

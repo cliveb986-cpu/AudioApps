@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Surround Workbench
+GenericName=7.1 Surround EQ Planner
+Comment=Plan a 7.1 surround playback chain and generate PulseAudio LADSPA config
+Exec=/bin/bash -lc 'cd "$HOME/SurroundWorkbench" && ./launch-app.sh'
+Path=$HOME/SurroundWorkbench
+Icon=multimedia-volume-control
+Terminal=true
+Categories=AudioVideo;Audio;Mixer;Utility;
+Keywords=audio;surround;pulseaudio;pipewire;equalizer;7.1;ladspa;
+StartupNotify=true
