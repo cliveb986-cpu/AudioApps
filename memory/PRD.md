@@ -74,3 +74,19 @@ chmod +x launch-app.sh install-gnome-launcher.sh
 ./launch-app.sh                  # first run installs + builds + opens browser
 ./install-gnome-launcher.sh      # optional: adds to GNOME Activities
 ```
+
+## Update — Custom 7.1-speaker app icon (this session)
+- Added `icons/surround-workbench.svg` — distinctive teal-on-dark app tile showing
+  7 speakers arrayed around a centre listener with an LFE cabinet between them
+  and a small "7.1" wordmark. Renders cleanly at 48 / 96 / 256 px.
+- `install-gnome-launcher.sh` now also copies the SVG into
+  `~/.local/share/icons/hicolor/scalable/apps/surround-workbench.svg`, runs
+  `gtk-update-icon-cache`, and registers `Icon=surround-workbench` (icon-theme
+  lookup name) on the `.desktop` entry. The icon then survives moving / renaming
+  the project folder.
+- `frontend/index.html` now links the same SVG as the browser tab favicon
+  (served from `frontend/public/surround-workbench.svg`).
+- `SurroundWorkbench.desktop` template updated. README has a new
+  "Custom app icon" section explaining how to replace the icon.
+- Zip rebuilt: **`/app/SurroundWorkbench-standalone.zip` (70 KB, 45 files)** —
+  cold-install verified (`unzip → yarn install → yarn build` succeeds).

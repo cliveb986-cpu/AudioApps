@@ -75,20 +75,44 @@ sudo apt install nodejs npm
 sudo pacman -S nodejs npm
 ```
 
+## Custom app icon
+
+Surround Workbench ships with its own SVG icon — a teal 7.1-speaker diagram
+arranged around a centre listener — at:
+
+```
+icons/surround-workbench.svg
+```
+
+`install-gnome-launcher.sh` copies it into your user icon theme at
+`~/.local/share/icons/hicolor/scalable/apps/surround-workbench.svg`, registers
+the launcher's `Icon=surround-workbench`, and refreshes `gtk-update-icon-cache`
++ `update-desktop-database`. The icon will then survive moving or renaming the
+project folder (GNOME looks it up by name, not path).
+
+The same SVG is also used as the browser tab favicon.
+
+To swap it for your own art, replace `icons/surround-workbench.svg` (any
+scalable SVG works) and re-run `./install-gnome-launcher.sh`.
+
 ## Project layout
 
 ```
 SurroundWorkbench/
 ├── launch-app.sh                 # one-click runner (build + serve + open browser)
 ├── launch-dev.sh                 # dev server (hot reload)
-├── install-gnome-launcher.sh     # GNOME .desktop registration
+├── install-gnome-launcher.sh     # GNOME .desktop + icon-theme registration
 ├── SurroundWorkbench.desktop     # editable launcher template
+├── icons/
+│   └── surround-workbench.svg    # custom 7.1-speaker app icon
 ├── README.md
 └── frontend/                     # Vite + React + TS app
     ├── package.json
     ├── vite.config.ts
     ├── tailwind.config.js
-    ├── index.html
+    ├── index.html                # links the SVG as favicon
+    ├── public/
+    │   └── surround-workbench.svg  # favicon copy (served at /surround-workbench.svg)
     └── src/
         ├── main.tsx
         ├── App.tsx

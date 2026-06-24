@@ -4,10 +4,15 @@ Type=Application
 Name=Surround Workbench
 GenericName=7.1 Surround EQ Planner
 Comment=Plan a 7.1 surround playback chain and generate PulseAudio LADSPA config
+# When this template is copied into ~/.local/share/applications/, the install
+# script rewrites Exec/Path/Icon to absolute paths. If you edit this template
+# manually, point Icon= at the bundled SVG (icons/surround-workbench.svg) or
+# any system icon name like "multimedia-volume-control".
 Exec=/bin/bash -lc 'cd "$HOME/SurroundWorkbench" && ./launch-app.sh'
 Path=$HOME/SurroundWorkbench
-Icon=multimedia-volume-control
+Icon=$HOME/SurroundWorkbench/icons/surround-workbench.svg
 Terminal=true
 Categories=AudioVideo;Audio;Mixer;Utility;
-Keywords=audio;surround;pulseaudio;pipewire;equalizer;7.1;ladspa;
+Keywords=audio;surround;pulseaudio;ladspa;equalizer;7.1;
 StartupNotify=true
+StartupWMClass=surround-workbench
