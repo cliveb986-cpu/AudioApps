@@ -77,23 +77,30 @@ sudo pacman -S nodejs npm
 
 ## Custom app icon
 
-Surround Workbench ships with its own SVG icon — a teal 7.1-speaker diagram
-arranged around a centre listener — at:
+Surround Workbench ships **two** icons:
+
+| File | Purpose |
+|---|---|
+| `icons/surround-workbench.svg` | Full-colour app tile — teal speakers on a dark rounded background. Used in Activities, the app grid, and your Desktop. |
+| `icons/surround-workbench-symbolic.svg` | Monochrome 16-px symbolic icon. GNOME recolours this to match the current panel / tray theme (light, dark, or accent). |
+
+`install-gnome-launcher.sh` copies both into your user icon theme:
 
 ```
-icons/surround-workbench.svg
+~/.local/share/icons/hicolor/scalable/apps/surround-workbench.svg
+~/.local/share/icons/hicolor/symbolic/apps/surround-workbench-symbolic.svg
 ```
 
-`install-gnome-launcher.sh` copies it into your user icon theme at
-`~/.local/share/icons/hicolor/scalable/apps/surround-workbench.svg`, registers
-the launcher's `Icon=surround-workbench`, and refreshes `gtk-update-icon-cache`
-+ `update-desktop-database`. The icon will then survive moving or renaming the
-project folder (GNOME looks it up by name, not path).
+…sets the launcher's `Icon=surround-workbench`, and refreshes
+`gtk-update-icon-cache` + `update-desktop-database`. GNOME will pick the
+symbolic variant automatically wherever a symbolic icon is appropriate
+(top-panel notifications, tray indicators, dim/active states).
 
-The same SVG is also used as the browser tab favicon.
+The full-colour SVG is also wired as the browser tab favicon.
 
-To swap it for your own art, replace `icons/surround-workbench.svg` (any
-scalable SVG works) and re-run `./install-gnome-launcher.sh`.
+To swap either icon for your own art, replace the corresponding file under
+`icons/` (keeping the `-symbolic.svg` suffix for the monochrome one) and
+re-run `./install-gnome-launcher.sh`.
 
 ## Project layout
 
@@ -104,7 +111,8 @@ SurroundWorkbench/
 ├── install-gnome-launcher.sh     # GNOME .desktop + icon-theme registration
 ├── SurroundWorkbench.desktop     # editable launcher template
 ├── icons/
-│   └── surround-workbench.svg    # custom 7.1-speaker app icon
+│   ├── surround-workbench.svg          # full-colour app icon
+│   └── surround-workbench-symbolic.svg # monochrome panel/tray icon
 ├── README.md
 └── frontend/                     # Vite + React + TS app
     ├── package.json

@@ -90,3 +90,17 @@ chmod +x launch-app.sh install-gnome-launcher.sh
   "Custom app icon" section explaining how to replace the icon.
 - Zip rebuilt: **`/app/SurroundWorkbench-standalone.zip` (70 KB, 45 files)** —
   cold-install verified (`unzip → yarn install → yarn build` succeeds).
+
+## Update — Symbolic (monochrome) GNOME icon (this session)
+- Added `icons/surround-workbench-symbolic.svg` — 16×16 single-colour mark
+  (#2e3436) that the GTK symbolic-icon pipeline recolours per panel/theme.
+  Geometry mirrors the full-colour mark (centre listener + 7 speakers + LFE).
+- `install-gnome-launcher.sh` now also copies the symbolic SVG to
+  `~/.local/share/icons/hicolor/symbolic/apps/surround-workbench-symbolic.svg`.
+  GNOME auto-picks it wherever a symbolic icon is appropriate (top-panel
+  notifications, tray indicators, dim/active states).
+- README updated with a two-icon table and replacement instructions.
+- Cold-install verification in a sandboxed `XDG_DATA_HOME`: both icons land
+  in their hicolor locations, `gtk-update-icon-cache` builds, `.desktop`
+  references `Icon=surround-workbench`. Bash syntax check passes.
+- Zip rebuilt: **`/app/SurroundWorkbench-standalone.zip` (72 KB, 50 files)**.

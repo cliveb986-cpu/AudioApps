@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  GNOME symbolic icon for Surround Workbench.
+
+  Conventions:
+  - 16x16 viewBox (GNOME panel / symbolic size).
+  - Single colour fill (#2e3436). The GTK symbolic-icon pipeline recolours
+    this on the fly to match the current panel / theme foreground.
+  - Filename MUST end in "-symbolic.svg" so GNOME treats it as symbolic
+    (auto-light/dark, follows accent colour, dims when inactive, etc.).
+  - Geometry mirrors the full-colour mark: a centre listener with 7 speakers
+    arrayed around it and a small LFE bar in front.
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 16 16"
+     width="16" height="16"
+     fill="#2e3436">
+  <title>Surround Workbench</title>
+  <g class="ColorScheme-Text">
+    <!-- Listener (centre, slightly larger to read as "you") -->
+    <circle cx="8" cy="8" r="1.4"/>
+
+    <!-- 7 speakers at angles 0, ±30, ±90, ±150 measured from front -->
+    <circle cx="8"    cy="2"    r="1.1"/>  <!-- FC  -->
+    <circle cx="3.5"  cy="3.2"  r="1.1"/>  <!-- FL  -->
+    <circle cx="12.5" cy="3.2"  r="1.1"/>  <!-- FR  -->
+    <circle cx="2"    cy="8"    r="1.1"/>  <!-- SL  -->
+    <circle cx="14"   cy="8"    r="1.1"/>  <!-- SR  -->
+    <circle cx="3.5"  cy="12.8" r="1.1"/>  <!-- RL  -->
+    <circle cx="12.5" cy="12.8" r="1.1"/>  <!-- RR  -->
+
+    <!-- LFE cabinet — small rounded bar in front of the listener -->
+    <rect x="6" y="5.1" width="4" height="1.6" rx="0.6"/>
+  </g>
+</svg>
