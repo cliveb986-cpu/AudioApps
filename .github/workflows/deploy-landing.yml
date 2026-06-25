@@ -28,12 +28,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: yarn
-          cache-dependency-path: SurroundWorkbench/landing/yarn.lock
+
+      - name: Enable Corepack (yarn)
+        run: corepack enable
 
       - name: Install dependencies
         working-directory: SurroundWorkbench/landing
-        run: yarn install --frozen-lockfile
+        run: yarn install
 
       - name: Build
         working-directory: SurroundWorkbench/landing
