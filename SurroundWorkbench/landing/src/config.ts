@@ -4,13 +4,13 @@
 
 // 1) Your public repo URL (no trailing slash).
 export const GITHUB_REPO =
-  'https://github.com/cliveb986-cpu/surround-workbench'
+  'https://github.com/cliveb986-cpu/AudioApps'
 
 // 2) Download URL for the zipped app.
 //    "releases/latest/download/<asset-name>" always points to the newest release
 //    that has this asset attached, so you never need to change it per release.
 export const DOWNLOAD_URL =
-  'https://github.com/cliveb986-cpu/surround-workbench/releases/latest/download/SurroundWorkbench-standalone.zip'
+  'https://github.com/cliveb986-cpu/AudioApps/releases/latest/download/SurroundWorkbench-standalone.zip'
 
 // 3) Version string shown in the hero badge + footer.
 export const VERSION = 'v1.0.0'

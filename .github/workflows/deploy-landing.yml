@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'landing/**'
+      - 'SurroundWorkbench/landing/**'
       - '.github/workflows/deploy-landing.yml'
   workflow_dispatch:
 
@@ -29,14 +29,14 @@ jobs:
         with:
           node-version: '20'
           cache: yarn
-          cache-dependency-path: landing/yarn.lock
+          cache-dependency-path: SurroundWorkbench/landing/yarn.lock
 
       - name: Install dependencies
-        working-directory: landing
+        working-directory: SurroundWorkbench/landing
         run: yarn install --frozen-lockfile
 
       - name: Build
-        working-directory: landing
+        working-directory: SurroundWorkbench/landing
         run: yarn build
 
       - name: Configure GitHub Pages
@@ -45,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: landing/dist
+          path: SurroundWorkbench/landing/dist
 
   deploy:
     needs: build
